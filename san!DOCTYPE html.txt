@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Godithi Kiran Sri Sai Sandeep | Python Backend Developer</title>
+<meta name="description" content="Portfolio of Godithi Kiran Sri Sai Sandeep, an aspiring Python and backend developer building REST APIs with Django, Flask and PostgreSQL.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>♞</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F5F0; --ink:#1C2530; --muted:#5B6570; --line:#D9D6CA;
+  --dark:#3E6B4E; --light:#D8C79C; --accent:#3E6B4E; --card:#FFFFFF;
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#141A17;--ink:#ECEBE4;--muted:#A3AAA5;--line:#2C3630;--dark:#4F8A64;--light:#8C8062;--accent:#7CC495;--card:#1A221E}
+}
+:root[data-theme="dark"]{--bg:#141A17;--ink:#ECEBE4;--muted:#A3AAA5;--line:#2C3630;--dark:#4F8A64;--light:#8C8062;--accent:#7CC495;--card:#1A221E}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:400 1rem/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+nav .logo{font:800 1.1rem var(--serif);text-decoration:none}
+nav ul{display:flex;gap:20px;list-style:none;padding:0;overflow-x:auto}
+nav ul a{text-decoration:none;color:var(--muted);font-size:.92rem;font-weight:500;white-space:nowrap}
+nav ul a:hover{color:var(--ink)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:6px;width:34px;height:34px;cursor:pointer;font-size:1rem;flex:none}
+/* Hero */
+.hero{padding:72px 0 48px}
+.hero h1{font:800 clamp(2.6rem,8vw,5.2rem)/1.02 var(--serif);letter-spacing:-.02em;max-width:12ch}
+.hero p.lead{margin-top:24px;max-width:56ch;font-size:1.15rem;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-block;padding:11px 20px;border-radius:6px;font-weight:600;text-decoration:none;border:1.5px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translateY(-1px)}
+.board{margin-top:56px;display:grid;grid-template-columns:repeat(8,1fr);border:1.5px solid var(--ink);border-radius:4px;overflow:hidden}
+.board i{display:grid;place-items:center;aspect-ratio:1;font-style:normal;font-size:clamp(1rem,4vw,2.2rem);line-height:1;color:#fff;background:var(--light)}
+.board i:nth-child(odd){background:var(--dark)}
+.board i:nth-child(n+9):nth-child(odd){background:var(--light)}
+.board i:nth-child(n+9):nth-child(even){background:var(--dark)}
+/* Sections */
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font:800 clamp(1.7rem,4vw,2.3rem) var(--serif);letter-spacing:-.01em;margin-bottom:28px}
+.grid{display:grid;gap:32px;grid-template-columns:1fr}
+@media(min-width:760px){.grid.two{grid-template-columns:1fr 1fr}}
+.about p+p{margin-top:14px}
+.about p{max-width:64ch}
+/* Skills */
+.skills{display:grid;gap:18px}
+.skills div{display:grid;gap:8px}
+.skills h3{font-size:.95rem;font-weight:600;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none}
+.chips li{border:1px solid var(--line);background:var(--card);padding:4px 12px;border-radius:999px;font-size:.9rem}
+/* Projects */
+.project{padding:26px 0;border-bottom:1px solid var(--line);display:grid;gap:10px}
+.project:first-of-type{padding-top:0}
+.project h3{font:600 1.35rem var(--serif)}
+.stack{color:var(--accent);font-weight:600;font-size:.92rem}
+.project ul{padding-left:18px;color:var(--muted);max-width:70ch}
+.project li+li{margin-top:6px}
+.project a.gh{justify-self:start;font-weight:600;font-size:.92rem}
+/* Timeline */
+.entry{display:grid;gap:4px;padding:0 0 26px 22px;border-left:2px solid var(--dark)}
+.entry h3{font:600 1.2rem var(--serif)}
+.entry .meta{color:var(--muted);font-size:.92rem}
+.entry ul{padding-left:18px;margin-top:8px;color:var(--muted)}
+.edu{display:grid;gap:2px;padding:14px 0;border-bottom:1px solid var(--line)}
+.edu strong{font-weight:600}
+.edu span{color:var(--muted);font-size:.92rem}
+.list{padding-left:18px;color:var(--muted)}
+.list li+li{margin-top:8px}
+/* Contact */
+.contact p{max-width:52ch;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.9rem}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Sandeep</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="theme" aria-label="Toggle light and dark theme">◐</button>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="hero">
+    <div class="wrap">
+      <h1>Godithi Kiran Sri Sai Sandeep</h1>
+      <p class="lead">Python backend developer in the making. I build REST APIs with Django, Flask and PostgreSQL, and I care about clean data, secure endpoints and code that gets tested.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="mailto:goditisandeep@gmail.com">Email me</a>
+      </div>
+      <div class="board" aria-hidden="true">
+        <i>♜</i><i>♞</i><i>♝</i><i>♛</i><i>♚</i><i>♝</i><i>♞</i><i>♜</i>
+        <i>♟</i><i>♟</i><i>♟</i><i>♟</i><i>♟</i><i>♟</i><i>♟</i><i>♟</i>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="wrap grid two about">
+      <h2>About</h2>
+      <div>
+        <p>I'm a final-year B.Tech student in Electronics and Communication Engineering at VSM College of Engineering, Ramachandrapuram, graduating in 2027. Most of my time outside class goes into backend development.</p>
+        <p>I'm looking for an entry-level Python Developer role where I can apply my Data Structures and Algorithms fundamentals and ship secure, well-tested backend systems.</p>
+        <p>Away from the keyboard I write stories, play chess, watch movies and travel. I have also hosted college events and helped write and produce short films.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div><h3>Languages</h3><ul class="chips"><li>Python</li><li>Java</li><li>JavaScript</li><li>TypeScript</li><li>C</li></ul></div>
+        <div><h3>Frameworks and libraries</h3><ul class="chips"><li>Django</li><li>Django REST Framework</li><li>Flask</li><li>Spring Boot</li><li>React</li><li>NumPy</li><li>Pandas</li></ul></div>
+        <div><h3>Databases</h3><ul class="chips"><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li></ul></div>
+        <div><h3>Web</h3><ul class="chips"><li>HTML</li><li>CSS</li><li>Bootstrap</li><li>REST API design</li></ul></div>
+        <div><h3>Tools</h3><ul class="chips"><li>Git</li><li>GitHub</li><li>Docker</li><li>Postman</li><li>VS Code</li><li>Linux / CLI</li><li>Jupyter Notebook</li></ul></div>
+        <div><h3>Core CS</h3><ul class="chips"><li>OOP</li><li>Data Structures and Algorithms</li><li>DBMS</li><li>Computer Networks</li><li>Operating Systems</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+
+      <article class="project">
+        <h3>Task Manager REST API</h3>
+        <p class="stack">Python, Flask, PostgreSQL, JWT</p>
+        <ul>
+          <li>A RESTful task-management API with full CRUD, JWT authentication and PostgreSQL persistence.</li>
+          <li>Token-based authorization keeps each user's data separate and blocks unauthorized access.</li>
+          <li>Filtering, priority tagging and due-date logic support real task-management workflows.</li>
+        </ul>
+        <a class="gh" href="https://github.com/goditisandeep" target="_blank" rel="noopener">View on GitHub</a>
+      </article>
+
+      <article class="project">
+        <h3>Data Analysis Dashboard</h3>
+        <p class="stack">Python, Pandas, NumPy, Matplotlib, Seaborn, Flask</p>
+        <ul>
+          <li>Analyzed a 50,000-row sales dataset and surfaced regional revenue trends with custom visualizations.</li>
+          <li>Cleaned raw data by resolving missing values and outliers to make the analysis reliable.</li>
+          <li>Served the findings in a lightweight Flask app for interactive exploration beyond a static notebook.</li>
+        </ul>
+        <a class="gh" href="https://github.com/goditisandeep" target="_blank" rel="noopener">View on GitHub</a>
+      </article>
+
+      <article class="project">
+        <h3>Web Scraper and Database Pipeline</h3>
+        <p class="stack">Python, Requests, BeautifulSoup, PostgreSQL</p>
+        <ul>
+          <li>A scraper that collects structured data every day into a PostgreSQL database.</li>
+          <li>Deduplication logic keeps the data consistent across repeated runs.</li>
+          <li>Scheduled runs with cron and the schedule module remove manual data collection.</li>
+        </ul>
+        <a class="gh" href="https://github.com/goditisandeep" target="_blank" rel="noopener">View on GitHub</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap grid two">
+      <div>
+        <h2>Experience</h2>
+        <div class="entry">
+          <h3>Web Technologies Intern</h3>
+          <p class="meta">Oceanapps Technologies Pvt. Ltd., Kakinada. 20 May – 19 July 2025 (8 weeks)</p>
+          <ul>
+            <li>Built front-end features with HTML, CSS and JavaScript.</li>
+            <li>Worked with the development team on real web application tasks.</li>
+            <li>Received an outstanding completion certificate for performance in the program.</li>
+          </ul>
+        </div>
+        <h2 style="margin-top:20px">Certification</h2>
+        <div class="entry">
+          <h3>Python Programming, Grade A+</h3>
+          <p class="meta">AH Career (Academy of Skills), Rajamahendravaram. 14 May – 30 June 2026</p>
+        </div>
+      </div>
+      <div>
+        <h2>Education</h2>
+        <div class="edu"><strong>B.Tech, Electronics and Communication Engineering</strong><span>VSM College of Engineering (Autonomous), Ramachandrapuram. 2023 – 2027 (expected). CGPA 75%</span></div>
+        <div class="edu"><strong>Higher Secondary (MPC)</strong><span>Aditya Junior College. 2021 – 2023. 66%</span></div>
+        <div class="edu"><strong>SSC</strong><span>Bhashyam Public School. 2020 – 2021. 90%</span></div>
+        <h2 style="margin-top:36px">Activities</h2>
+        <ul class="list">
+          <li>Hosted and coordinated college technical and cultural events for large audiences.</li>
+          <li>Contributed to short-film production and script writing.</li>
+          <li>Chess winner, Bhashyam Public School (2021).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>I'm open to entry-level Python and backend developer roles. Email is the quickest way to reach me.</p>
+      <div class="links">
+        <a class="btn primary" href="mailto:goditisandeep@gmail.com">goditisandeep@gmail.com</a>
+        <a class="btn" href="tel:+918247336510">Call 8247336510</a>
+        <a class="btn" href="https://github.com/goditisandeep" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/goditisandeep" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> Godithi Kiran Sri Sai Sandeep</div></footer>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var root=document.documentElement,btn=document.getElementById('theme');
+  try{var s=localStorage.getItem('theme');if(s)root.setAttribute('data-theme',s)}catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    var dark=cur==='dark'||(!cur&&matchMedia('(prefers-color-scheme:dark)').matches);
+    var next=dark?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
